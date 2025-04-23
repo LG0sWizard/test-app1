@@ -17,14 +17,10 @@ extern WIN_INFO_ST ArrWinInfo[5];
 
 const unsigned short * img[]={image0, img101};
 
-extern void temp_svc(); // Declare the system call function
-
 void Main(void)
 {
-	Uart_Printf(">>APP0 => LCD Display\n");
-	
-	temp_svc(); // Invoke the system call
-
+	Uart1_Printf_SVC(">>APP0 => LCD Display\n");
+	Lcd_Draw_Line_SVC(0, 0, 1023, 599, RED);
 	ArrWinInfo[0].bpp_mode = BPPMODE_16BPP_565;
 	ArrWinInfo[0].bytes_per_pixel = 2;
 	ArrWinInfo[0].p_sizex = 1024;

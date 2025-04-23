@@ -12,6 +12,20 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+//sys_call.c
+extern void LED_Display(int led);
+extern void Key_Get_Key_Pressed_SVC(void);
+extern void Lcd_Clr_Screen_SVC(void);
+extern void Lcd_Draw_Back_Color_SVC(int color);
+extern void Lcd_Get_Info_BMP_SVC(int * x, int  * y, const unsigned short int *fp);
+extern void Lcd_Draw_BMP_SVC(int x, int y, const unsigned short int *fp);
+extern void Lcd_Printf_SVC(int x, int y, int color, int bkcolor, int zx, int zy, char *fmt,...);
+extern void Lcd_Draw_Bar_SVC(int x1, int y1, int x2, int y2, int color);
+extern void Lcd_Draw_Line_SVC(int x1,int y1,int x2,int y2,int color);
+extern void Uart1_Printf_SVC(const char *fmt,...);
+extern void Uart1_Get_Pressed_SVC(void);
+extern void temp_svc(void);
+
 // runtime.c
 extern void Delay(unsigned int v);
 
